@@ -38,6 +38,12 @@ Antes de ejecutar este proyecto en otra computadora, se debe tener instalado:
 - Git
 - uv
 
+Para verificar si Python está instalado, se puede ejecutar:
+
+```bash
+python --version
+```
+
 Para verificar si Git está instalado, se puede ejecutar:
 
 ```bash
@@ -50,7 +56,23 @@ Para verificar si `uv` está instalado, se puede ejecutar:
 uv --version
 ```
 
-## Instrucciones de instalación
+## Instalación de uv
+
+Si `uv` no está instalado, se puede instalar siguiendo la documentación oficial de Reflex.
+
+En Windows PowerShell, se puede usar el siguiente comando:
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Luego se recomienda cerrar y abrir nuevamente la terminal. Después, se puede verificar la instalación con:
+
+```bash
+uv --version
+```
+
+## Instrucciones de instalación del proyecto
 
 Para instalar el proyecto en cualquier computadora, se deben seguir estos pasos:
 
@@ -163,6 +185,21 @@ practica_1_reflex/practica_1_reflex.py
 ```
 
 En este archivo se encuentra el código de la página, incluyendo el estado de la aplicación, los eventos del contador y los componentes visuales.
+
+## Nota para usuarios que ejecuten el proyecto desde Dropbox
+
+Si el proyecto se ejecuta dentro de una carpeta sincronizada con Dropbox y aparecen errores relacionados con enlaces de archivos o dependencias, se puede usar el siguiente comando en PowerShell antes de instalar o ejecutar:
+
+```powershell
+$env:UV_LINK_MODE="copy"
+```
+
+Luego se puede ejecutar nuevamente:
+
+```bash
+uv sync
+uv run reflex run
+```
 
 ## Control de versiones
 
